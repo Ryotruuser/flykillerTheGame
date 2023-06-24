@@ -23,7 +23,7 @@ function posicaoRandomica(){
 
         //controle de vidas
         if(vidas > 3){
-            alert('game over')
+            window.location.href = "gameover.html"
         }else{
             document.getElementById(`vida${vidas}`).src = "img/coracao_vazio.png"
 
