@@ -3,6 +3,20 @@ var altura = 0
 var largura = 0
 var vidas = 1
 var tempo = 15
+var nivel = window.location.search
+var criaMoscaTempo = 1500
+
+// fazendo com que o nivel seja atualizado, removendo o ? que fica apos busca via location search
+nivel = nivel.replace('?', '')
+
+if(nivel === 'normal'){
+    criaMoscaTempo = 1500
+}else if( nivel === 'dificil'){
+    criaMoscaTempo = 1000
+}else if(nivel === 'hardcore'){
+    criaMoscaTempo = 750
+}
+
 
 //criando funcao para ajustar tamanho da tela de acao
 function ajustaTamanhoPalcoJogo(){
@@ -21,7 +35,7 @@ var conometro = setInterval(function(){
     if(tempo < 0){
         clearInterval(conometro)
         clearInterval(criaMosca)
-        alert('victory')
+        window.location.href="victory.html"
 
     }else{
         document.getElementById('cronometro').innerHTML = tempo
@@ -49,7 +63,6 @@ function posicaoRandomica(){
         }
         
     }
-    
 
     var posicaoX = Math.floor(Math.random() * largura) - 90
     var posicaoY = Math.floor(Math.random() * altura) - 90
@@ -75,7 +88,6 @@ function posicaoRandomica(){
     }
 
     document.body.appendChild(mosca)
-
     tamanhoAleatorio()
 }
 
@@ -84,7 +96,7 @@ function posicaoRandomica(){
 
 var criaMosca = setInterval(function(){
     posicaoRandomica()
-}, 1500)
+}, criaMoscaTempo)
 
 // funcao para aleatorizar tamanho do elemento mosca
 function tamanhoAleatorio(){

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <title>Fly Killer The Game</title>
+</head>
+<body onresize="ajustaTamanhoPalcoJogo()">
+    
+    <div class="painel">
+        <div class="vidas">
+            <img id="vida1" src="img/coracao_cheio.png" alt="coracao cheio">
+            <img id="vida2" src="img/coracao_cheio.png" alt="coracao cheio">
+            <img id="vida3" src="img/coracao_cheio.png" alt="coracao cheio">
+        </div>
+
+        <div class="cronometro">
+            Tempo restante: <span id="cronometro"></span>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    document.getElementById('cronometro').innerHTML = tempo
+</script>
+</html>
