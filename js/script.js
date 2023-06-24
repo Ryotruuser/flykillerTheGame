@@ -1,6 +1,7 @@
 //definindo variaveis globais
 var altura = 0
 var largura = 0
+var vidas = 1
 
 //criando funcao para ajustar tamanho da tela de acao
 function ajustaTamanhoPalcoJogo(){
@@ -19,6 +20,16 @@ function posicaoRandomica(){
     //remover mosca anterior caso exista
     if(document.getElementById('mosca')){
         document.getElementById('mosca').remove()
+
+        //controle de vidas
+        if(vidas > 3){
+            alert('game over')
+        }else{
+            document.getElementById(`vida${vidas}`).src = "img/coracao_vazio.png"
+
+            vidas++
+        }
+        
     }
     
 
@@ -39,6 +50,12 @@ function posicaoRandomica(){
     mosca.style.left = posicaoX + 'px'
     mosca.style.top = posicaoY + 'px'
 
+    //definindo logica ao clicar no element mosca
+    mosca.onclick = function(){
+        this.remove()
+
+    }
+
     document.body.appendChild(mosca)
 
     tamanhoAleatorio()
@@ -49,7 +66,7 @@ function posicaoRandomica(){
 
 setInterval(function(){
     posicaoRandomica()
-}, 1000)
+}, 1500)
 
 // funcao para aleatorizar tamanho do elemento mosca
 function tamanhoAleatorio(){
