@@ -2,6 +2,7 @@
 var altura = 0
 var largura = 0
 var vidas = 1
+var tempo = 15
 
 //criando funcao para ajustar tamanho da tela de acao
 function ajustaTamanhoPalcoJogo(){
@@ -12,6 +13,23 @@ function ajustaTamanhoPalcoJogo(){
 }
 // chamando alteracao da variavel global altura/largura para as proximas funcoes
 ajustaTamanhoPalcoJogo()
+
+// definindo cronometro
+var conometro = setInterval(function(){
+    tempo -= 1
+
+    if(tempo < 0){
+        clearInterval(conometro)
+        clearInterval(criaMosca)
+        alert('victory')
+
+    }else{
+        document.getElementById('cronometro').innerHTML = tempo
+    }   
+    
+    
+}, 1000)
+
 
 // criando funcao para fazer a posicao do elemento ser aleatoria.
 // atribuindo tambem outras funcoes como a de classes e tamanho
@@ -64,7 +82,7 @@ function posicaoRandomica(){
 //Chamando elemento mosca na tela 
 
 
-setInterval(function(){
+var criaMosca = setInterval(function(){
     posicaoRandomica()
 }, 1500)
 
