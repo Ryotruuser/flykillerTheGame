@@ -22,11 +22,26 @@ function posicaoRandomica(){
     //criar elemento HTML
     var mosca = document.createElement('img')
     mosca.src = 'img/mosca.png'
-    mosca.className = 'mosca1'
+    mosca.className = tamanhoAleatorio()
     mosca.style.position = 'absolute'
     mosca.style.left = posicaoX + 'px'
     mosca.style.top = posicaoY + 'px'
 
     document.body.appendChild(mosca)
+
+    tamanhoAleatorio()
 }
 posicaoRandomica()
+
+function tamanhoAleatorio(){
+    var classe = Math.floor(Math.random() * 3)
+    switch (classe){
+        case 0:
+            return 'mosca1'
+
+        case 1:
+            return 'mosca2'
+
+        case 2:
+    }       return 'mosca3'
+}
