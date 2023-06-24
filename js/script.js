@@ -23,7 +23,6 @@ function ajustaTamanhoPalcoJogo(){
 
     altura = window.innerHeight
     largura = window.innerWidth
-    console.log(largura, altura)
 }
 // chamando alteracao da variavel global altura/largura para as proximas funcoes
 ajustaTamanhoPalcoJogo()
@@ -69,8 +68,6 @@ function posicaoRandomica(){
     
     posicaoX = posicaoX < 0 ? 0 : posicaoX
     posicaoY = posicaoY < 0 ? 0 : posicaoY
-
-    console.log(posicaoX, posicaoY)
     
     //criar elemento HTML
     var mosca = document.createElement('img')
