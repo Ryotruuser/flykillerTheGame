@@ -6,6 +6,7 @@ var tempo = 15
 var nivel = window.location.search
 var criaMoscaTempo = 1500
 
+
 // fazendo com que o nivel seja atualizado, removendo o ? que fica apos busca via location search
 nivel = nivel.replace('?', '')
 
@@ -81,6 +82,9 @@ function posicaoRandomica(){
     //definindo logica ao clicar no element mosca
     mosca.onclick = function(){
         this.remove()
+        var hit = document.getElementById('hit')
+        hit.play()
+        
 
     }
 
